@@ -72,34 +72,31 @@ result = types_5_task()
 print("Result: ", result)
 
 
-def usloviya_2_task(*args, **kwargs):
+def usloviya_2_task(*args):
     """
     2. Даны три целых числа. Найти количество положительных чисел в исходном наборе.
     """
-    numbers = [1, 44, -12]
     count = 0
-    for num in numbers:
-        if num > 0:
+    for arg in args:
+        if arg > 0:
             count = count + 1
     return count
 
-result = usloviya_2_task()
+result = usloviya_2_task(1, 44, -12)
 print("The number of positive numbers is: ", result)
 
 
-def cycle_for(*args, **kwargs):
+def cycle_for(*args):
     """
     2. Найти сумму всех натуральных чисел в от A до B
     """
-    a = 1
-    b = 99
     sum = 0
-    for i in range(a,b):
+    for i in range(args[0], args[1]):
         sum = sum + i
-    sum_with_b = sum + b
+    sum_with_b = sum + args[1]
     return sum_with_b
 
-result = cycle_for()
+result = cycle_for(1,99)
 print("Summa chisel:", result)
 
 
@@ -118,9 +115,3 @@ print("Summa chisel:", result)
 
 
 
-
-
-
-# for val in key_list_set:
-#     result_massive[val] = [a.get(val), b.get(val)]
-# print("Result: ", result_massive)
