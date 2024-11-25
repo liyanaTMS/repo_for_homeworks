@@ -23,7 +23,7 @@ with open("task1.txt", 'r') as f:
 # пустым.
 def chet_nechet(stroka):
     print("File: ", stroka)
-    data_list = line.split()
+    data_list = stroka.split()
     data_list_int = list(map(int, data_list))
     massiv_chetnyh = []
     massiv_nechetnyh = []
