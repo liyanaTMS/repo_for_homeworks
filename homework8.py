@@ -3,8 +3,6 @@ import time
 
 print("First task:")
 def factorial(n):
-    #start_time = time.perf_counter()
-    #print("Start time = ", start_time)
     if n == 0:
         return 1
     else:
@@ -23,7 +21,7 @@ print(result)
 
 
 def time_decorator(func):
-    import time
+
     def wrapper(*args, **kwargs):
         print("----------------------------------------------------------")
         start_time = time.perf_counter()
@@ -134,12 +132,16 @@ number_names = {
                 18: 'eighteen',
                 19: 'nineteen',
                 }
-date = [5, 8, 9, 10, 11, 7, 6, 9, 1, 3, 15, 19, 2, 3, 4, 8, 0, 9, 1, 3, 16, 14, 12, 18, 2, 11, 0, 9, 8, 18]
-new_date = []
-for el in date:
-    new_date.append(number_names[el])
-new_date_set = set(new_date)
-new_date_sorted = sorted(new_date_set)
-print(" ".join(new_date_sorted))
+date = "5 8 9 10 11 7 6 9 1 3 15 19 2 3 4 8 0 9 1 3 16 14 12 18 2 11 0 9 8 18"
+date_split = date.split()
+new_date_split = []
+for el in date_split:
+    new_date_split.append(int(el))
+new_date_sorted = sorted(new_date_split, key = lambda x: number_names[x] )
+new_date_sorted_str = []
+for el in new_date_sorted:
+    new_date_sorted_str.append(str(el))
+print(" ".join(new_date_sorted_str))
+
 
 
