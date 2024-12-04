@@ -113,8 +113,6 @@ class Bouquet:
 
 
     def __str__(self):
-       # return f"Список цветов {self.flowers}, Список аксессуаров {self.accessories}"
-
         return ("BOUQUET  Flowers: " + ", ".join(list(map(lambda x: x.name, self.flowers))) +
                 "  Accessories: " + ", ".join(list(map(lambda y: y.name, self.accessories))))
 
