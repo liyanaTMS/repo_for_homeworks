@@ -88,38 +88,45 @@ pt1._print_value(17, 18)
 
 
 # 3. Классы и полиморфизм
-print("--------------------------------------------")
-print("Task3:")
-class Rectangle:
+
+
+from abc import ABC, abstractmethod
+
+class Figure(ABC):
+    @abstractmethod
+    def get_area(self):
+        pass
+
+class Rectangle(Figure):
     def __init__(self, a, b):
         self.a = a
         self.b = b
+
     def get_area(self):
         return self.a * self.b
 
-class Square:
+class Square(Figure):
     def __init__(self, a):
         self.a = a
+
     def get_area(self):
         return self.a**2
 
-class Circle:
+class Circle(Figure):
     def __init__(self, r):
         self.r = r
+
     def get_area(self):
-        return 3.14*(self.r**2)
+        return 3.14 * (self.r**2)
 
-rect1 = Rectangle(3, 4)
-rect2 = Rectangle(12, 5)
 
-sq1 = Square(5)
-sq2 = Square(7)
+figures = [
+    Rectangle(3, 4), Rectangle(12, 5),
+    Square(5), Square(7),
+    Circle(3), Circle(2)
+]
 
-cir1 = Circle(3)
-cir2 = Circle(2)
-
-figures = [rect1, rect2, sq1, sq2, cir1, cir2]
+print("---------------------------------")
+print("Task3:")
 for figure in figures:
     print(figure.get_area())
-
-
